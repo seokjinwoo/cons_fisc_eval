@@ -210,6 +210,72 @@ body {
   padding-left: 10px;
   border-left: 4px solid #1a3a8f;
 }
+/* ── 반응형 레이아웃 ── */
+@media (max-width: 1024px) {
+  .header { padding: 20px 24px 16px; }
+  .tabs { padding: 0 24px; overflow-x: auto; }
+  .content { padding: 20px 24px; }
+  .kpi-grid { grid-template-columns: repeat(3, 1fr); }
+  .chart-row.col2,
+  .chart-row.col3,
+  .chart-row.col21,
+  .chart-row.col12 { grid-template-columns: 1fr; }
+  .chart-card { overflow-x: auto; }
+}
+
+@media (max-width: 768px) {
+  body { font-size: 12px; }
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 18px 16px 14px;
+  }
+  .header-left h1 { font-size: 18px; line-height: 1.35; }
+  .header-left .sub { font-size: 11px; }
+  .header-right { text-align: left; font-size: 11px; }
+  .tabs {
+    padding: 0 12px;
+    top: 0;
+    -webkit-overflow-scrolling: touch;
+  }
+  .tab-btn {
+    flex: 0 0 auto;
+    padding: 12px 14px;
+    font-size: 12px;
+  }
+  .content { padding: 16px 12px; }
+  .kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .kpi-card { padding: 13px 12px 12px; border-radius: 8px; }
+  .kpi-val { font-size: 20px; }
+  .chart-row { gap: 12px; margin-bottom: 12px; }
+  .chart-card { padding: 14px 12px 12px; border-radius: 8px; }
+  .chart-title { font-size: 12px; margin-bottom: 12px; }
+  .chart-title .badge { margin-left: 4px; }
+  .chart-wrap.tall { overflow-x: auto; padding-bottom: 4px; }
+  .chart-wrap.tall canvas { min-width: 640px; max-height: 320px; }
+  .filter-bar { align-items: stretch; }
+  .filter-bar label { width: 100%; }
+  .filter-bar select,
+  .filter-bar input { width: 100%; min-height: 34px; }
+  .div-table { min-width: 760px; font-size: 11px; }
+  .div-table th,
+  .div-table td { padding: 7px 8px; }
+}
+
+@media (max-width: 480px) {
+  .header-left h1 { font-size: 16px; }
+  .kpi-grid { grid-template-columns: 1fr; }
+  .chart-card[style] { padding: 14px 12px 12px !important; }
+  .chart-card > div[style*="display:flex"] { gap: 16px !important; }
+  .pct-bar { min-width: 220px; }
+  .chart-wrap canvas { max-height: 220px; }
+  .chart-wrap.tall canvas { min-width: 560px; max-height: 300px; }
+}
 </style>
 </head>
 <body>
